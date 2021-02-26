@@ -114,6 +114,7 @@ auf $\mathbb{R}$.
           \begin{align*}
             \Vert v + w \Vert_\infty
             &= \max \left\{|v_1 + w_1|, \dots |v_n + w_n|\right\} \\
+            &\leq \max \left\{|v_{1}|+|w_{1}|, \dots, |v_{n}|+|w_{n}|\right\}\\
             &\leq \max \left\{|v_{1}|, \dots, |v_{n}|\right\}
             + \max \left\{|w_{1}|, \dots, |w_{n}|\right\} \\
             &= \Vert v \Vert_{\infty} + \Vert w \Vert_{\infty},
@@ -190,7 +191,7 @@ auf $\mathbb{R}$.
   $\langle \cdot, \cdot \rangle \colon V \times V \to \mathbb{R}$.
   Das heisst,
   \begin{enumerate}[(i)]
-    \item für alle $v \in V$ gilt $\langle v, v \geq 0 \rangle$ 
+    \item für alle $v \in V$ gilt $\langle v, v \rangle \geq 0$ 
       und $\langle v, v \rangle = 0$ genau dann,
       wenn $v = 0$,
     \item für alle $v, w \in V$ gilt 
@@ -262,6 +263,17 @@ auf $\mathbb{R}$.
   \end{enumerate}
 \end{proof}
 
+\begin{remark}
+  Falls gilt
+   \[
+      \langle v, w \rangle = \sqrt{\langle v, v \rangle}
+      \cdot \sqrt{\langle w, w \rangle},
+    \]
+    dann hat man $D=0$. Es existiert somit ein $t\in\mathbb{R}$
+    mit $0=h(t)=\langle v+tw,v+tw\rangle=\Vert v+tw\Vert$. Das
+    heisst $v+tw=0$, also sind $v$ und $w$ linear abhängig.
+\end{remark}
+
 \begin{examples}
   \leavevmode
   \begin{enumerate}[(1)]
@@ -289,7 +301,7 @@ auf $\mathbb{R}$.
 
 \begin{remark}
   Nicht jede Norm auf $V$ stammt von einem Skalarprodukt.
-  In den Übungen wird gezeigt, dass jede von einem Skalarprodukt
+  In der Serie 01, Übung 1 wird gezeigt, dass jede von einem Skalarprodukt
   induzierte Norm $\Vert \cdot \Vert$ die
   \emph{Parallelogramm-identität}
   \[
